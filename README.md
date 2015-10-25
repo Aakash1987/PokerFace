@@ -1,2 +1,2 @@
 # PokerFace
-A simple 2-player game of poker
+A simple 2-player game of poker.

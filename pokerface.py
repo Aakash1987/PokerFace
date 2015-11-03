@@ -1,7 +1,14 @@
 import random
-random.seed(1)
+import sys
+random.seed(int(sys.argv[1]))
 rounds=1
+decision = 0
 while rounds<5:
 	rounds=rounds+1
 	chance=random.random()
-	print chance
+	if chance<0.5:
+		decision = 1
+		final_round=rounds
+		break
+
+print decision

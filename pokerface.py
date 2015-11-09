@@ -4,7 +4,7 @@ random.seed(int(sys.argv[1]))
 rounds=0
 decision = 0
 final_round=5
-	
+print "Chances of each player per round were:"
 
 while rounds<5:
 
@@ -27,7 +27,9 @@ while rounds<5:
 	if decision ==1:
 		break
 
-
+print "Did the game end in a win (1)?"
 print decision
+print "The final round was:"
 print final_round
+print "The loser was:"
 print loser

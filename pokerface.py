@@ -17,21 +17,21 @@ for i in deck_of_cards:
 	while y<14:
 		if y<10:
 			t=i+0.1*y
-			print t
+			#print t
 			temp_array.append(t)
 			y=y+1	
 		if y>10:
 			t=i+0.01*y
-			print t
+			#print t
 			temp_array.append(t)
 			y=y+1	
 		if y==10:
 			y=y+1
 		
 		
-#Append temp_array to deck_of_cards
+#Append temp_array to deck_of_cards and shuffle
 deck_of_cards.extend(temp_array)
-
+random.shuffle(deck_of_cards)
 
 while rounds<5:
 
@@ -60,5 +60,8 @@ print "The final round was:"
 print final_round
 print "The loser was:"
 print loser
-print temp_array
+#print temp_array
+print "Deck of cards is:"
 print deck_of_cards
+
+

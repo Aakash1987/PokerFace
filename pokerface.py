@@ -6,6 +6,8 @@ decision = 0
 final_round=5
 print "Chances of each player per round were:"
 
+
+# Defining a deck of cards
 #1-Spades, 2-Clubs, 3-Diamonds, 4- Hearts
 # 1.1- Ace through 1.13-King, 1 - 10
 deck_of_cards = [1,2,3,4]
@@ -27,7 +29,30 @@ for i in deck_of_cards:
 			y=y+1	
 		if y==10:
 			y=y+1
-		
+
+#Alternate way of defining deck of cards
+
+from enum import Enum
+class Suit(Enum):
+	heart=1
+	diamond=2
+	spade=3
+	club=4
+	
+class Value(Enum):
+	Ace=1
+	Two=2
+	Three=3
+	Four=4
+	Five=5
+	Six=6
+	Seven=7
+	Eight=8
+	Nine=9
+	Ten=10
+	Jack=11
+	Queen=12
+	King=13		
 		
 #Append temp_array to deck_of_cards and shuffle
 deck_of_cards.extend(temp_array)

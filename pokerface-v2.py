@@ -1,6 +1,7 @@
 import random
 import sys
 random.seed(int(sys.argv[1]))
+rounds=0
 decision = 0
 final_round=5
 print "Chances of each player per round were:"
@@ -62,43 +63,23 @@ for i in Suit:
 deck_of_cards.extend(temp_array)
 random.shuffle(deck_of_cards)
 random.shuffle(deck_of_cards_2)
-test_deck=deck_of_cards_2
-#print deck_of_cards_2
-
-##################
-
-#Dealing three cards to each player in the beginning
-
-hand_player_1=[]
-hand_player_2=[]
-
-t=1
-for i in deck_of_cards_2:
-	hand_player_1.append(i)
-	deck_of_cards_2.remove(i)
-	t=t+1
-	if(t>3):
-		break
-	else:
-		continue
-		
-t=1
-for i in deck_of_cards_2:
-	hand_player_2.append(i)
-	deck_of_cards_2.remove(i)
-	t=t+1
-	if(t>3):
-		break
-	else:
-		continue
-
-#Game flow
-rounds=0
 
 while rounds<5:
 
+	for i in deck_of_cards_2:
+		hand_player_1.append(i)
+		deck_of_cards_2.remove(i)
+		break
+
+	for i in deck_of_cards_2:
+		hand_player_2.append(i)
+		deck_of_cards_2.remove(i)
+		break
+	
 	player=1
 	rounds=rounds+1
+
+# Folding logic
 	
 	while player<3:
 		chance=random.random()
@@ -115,7 +96,7 @@ while rounds<5:
 			
 	if decision ==1:
 		break
-		
+
 
 print "Did the game end in a win (1)?"
 print decision
@@ -127,9 +108,6 @@ print loser
 print "Deck of cards is:"
 print deck_of_cards
 print "Alternate deck of cards is:"
-print test_deck
-print "Player 1's hand"
-print hand_player_1
-print "Player 2's hand"
-print hand_player_2
+print deck_of_cards_2
+
 

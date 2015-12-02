@@ -31,6 +31,7 @@ for i in deck_of_cards:
 			y=y+1
 
 #Alternate way of defining deck of cards
+deck_of_cards_2 = []
 
 from enum import Enum
 class Suit(Enum):
@@ -54,6 +55,10 @@ class Value(Enum):
 	Queen=12
 	King=13		
 		
+for i in Suit:
+	for j in Value:
+		deck_of_cards_2.append((i,j))
+
 #Append temp_array to deck_of_cards and shuffle
 deck_of_cards.extend(temp_array)
 random.shuffle(deck_of_cards)
@@ -88,5 +93,7 @@ print loser
 #print temp_array
 print "Deck of cards is:"
 print deck_of_cards
+print "Alternate deck of cards is:"
+print deck_of_cards_2
 
 

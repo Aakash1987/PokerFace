@@ -9,6 +9,7 @@ print "Chances of each player per round were:"
 # Defining a deck of cards
 #1-Spades, 2-Clubs, 3-Diamonds, 4- Hearts
 # 1.1- Ace through 1.13-King, 1 - 10
+
 deck_of_cards = [1,2,3,4]
 temp_array=[]
 t=0
@@ -28,6 +29,11 @@ for i in deck_of_cards:
 			y=y+1	
 		if y==10:
 			y=y+1
+
+#Append temp_array to deck_of_cards and shuffle
+
+deck_of_cards.extend(temp_array)
+random.shuffle(deck_of_cards)
 
 #Alternate way of defining deck of cards
 deck_of_cards_2 = []
@@ -58,9 +64,7 @@ for i in Suit:
 	for j in Value:
 		deck_of_cards_2.append((i,j))
 
-#Append temp_array to deck_of_cards and shuffle
-deck_of_cards.extend(temp_array)
-random.shuffle(deck_of_cards)
+
 random.shuffle(deck_of_cards_2)
 test_deck=deck_of_cards_2
 #print deck_of_cards_2

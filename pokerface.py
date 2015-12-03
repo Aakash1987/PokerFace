@@ -3,7 +3,7 @@ import sys
 random.seed(int(sys.argv[1]))
 decision = 0
 final_round=5
-print "Chances of each player per round were:"
+
 
 
 # Defining a deck of cards
@@ -96,19 +96,40 @@ for i in deck_of_cards_2:
 	else:
 		continue
 
+
 #Game flow
+
 rounds=0
+print "Chances of each player per round were:"
 
-while rounds<5:
+while rounds<3:
 
+	if rounds>0:
+		t=0
+		
+		for i in deck_of_cards_2:
+			if(t==0):
+				hand_player_1.append(i)
+				deck_of_cards_2.remove(i)
+				t=t+1
+			
+		t=0
+		
+		for i in deck_of_cards_2:
+			if(t==0):
+				hand_player_2.append(i)
+				deck_of_cards_2.remove(i)
+				t=t+1
+
+	
 	player=1
-	rounds=rounds+1
+	rounds=rounds+1	
 	
 	while player<3:
 		chance=random.random()
 		# print player
 		print chance
-		if chance<0.5:
+		if chance<0.3:
 			decision = 1
 			final_round=rounds
 			loser = player
@@ -117,7 +138,7 @@ while rounds<5:
 		if decision == 0:
 			loser = 0
 			
-	if decision ==1:
+	if decision==1:
 		break
 		
 
@@ -128,12 +149,16 @@ print final_round
 print "The loser was:"
 print loser
 #print temp_array
-print "Deck of cards is:"
-print deck_of_cards
-print "Alternate deck of cards is:"
-print test_deck
-print "Player 1's hand"
+#print "Deck of cards is:"
+#print deck_of_cards
+#print "Alternate deck of cards is:"
+#print test_deck
+#print "Player 1's hand after 1 round"
+#print temp
+#print "Player 2's hand after 1 round"
+#print hand_player_2_round_1
+print "Player 1's final hand"
 print hand_player_1
-print "Player 2's hand"
+print "Player 2's final hand"
 print hand_player_2
 
